@@ -1,18 +1,14 @@
 import React from "react";
-import "./ExpesenItem.css";
+import "./ExpenseItem.css";
+import ExpenseDate from "./ExpenseDate";
 
-const ExpenseItem = ({ date, expense, price }) => {
+const ExpenseItem = ({ date, title, amount }) => {
   return (
     <div className="expense-item">
-      <div>
-        <div>{date.toLocaleString("en-US", { month: "long" })}</div>
-        <div>{date.toLocaleString("en-US", { day: "2-digit" })}</div>
-        <div>{date.getFullYear()}</div>
-      </div>
-
+      <ExpenseDate date={date} />
       <div className="expense-item__description">
-        <h2>{expense}</h2>
-        <div className="expense-item__price">{price}</div>
+        <h2>{title}</h2>
+        <div className="expense-item__price">{amount}</div>
       </div>
     </div>
   );
